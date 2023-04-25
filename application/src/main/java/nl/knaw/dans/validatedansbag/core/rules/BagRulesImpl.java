@@ -642,7 +642,7 @@ public class BagRulesImpl implements BagRules {
 
                         if (parts.size() < 2) {
                             return String.format(
-                                "Point has less than two coordinates: %s", text
+                                "%s has less than two coordinates: %s", value.getLocalName(), text
                             );
                         }
 
@@ -654,14 +654,14 @@ public class BagRulesImpl implements BagRules {
 
                             if (!valid) {
                                 return String.format(
-                                    "Point is outside RD bounds: %s", text
+                                    "%s is outside RD bounds: %s", value.getLocalName(), text
                                 );
                             }
                         }
                     }
                     catch (NumberFormatException e) {
                         return String.format(
-                            "Point has non numeric coordinates: %s", text
+                            "%s has non numeric coordinates: %s", value.getLocalName(), text
                         );
                     }
 
